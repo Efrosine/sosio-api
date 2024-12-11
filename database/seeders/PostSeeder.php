@@ -13,17 +13,17 @@ class PostSeeder extends Seeder
             [
                 'user_id' => 1,
                 'content' => 'This is my first post!',
-                'image' => null,
+                'image' => 'https://www.kpopmonster.jp/wp-content/uploads/2021/07/karina_01.jpg',
             ],
             [
                 'user_id' => 2,
                 'content' => 'Loving the Laravel framework!',
-                'image' => null,
+                'image' => 'https://www.kpopmonster.jp/wp-content/uploads/2021/07/karina_01.jpg',
             ],
             [
                 'user_id' => 3,
                 'content' => 'Hello, world!',
-                'image' => 'image3.png',
+                'image' => 'https://www.kpopmonster.jp/wp-content/uploads/2021/07/karina_01.jpg',
             ],
         ];
 

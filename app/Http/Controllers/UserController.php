@@ -10,7 +10,10 @@ class UserController extends Controller
     // Get current logged-in user
     public function getCurrentUser(Request $request)
     {
-        $user = $request->user(); // Mengambil pengguna yang terautentikasi
+        $user = $request->user()->load('following', 'followers'); // Mengambil pengguna yang terautentikasi
+        $user->following_count = $user->following()->count();
+        $user->followers_count = $user->followers()->count();
+        $user->posts_count = $user->posts()->count();
         return response()->json($user);
     }
 

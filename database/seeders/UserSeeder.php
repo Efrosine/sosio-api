@@ -12,26 +12,27 @@ class UserSeeder extends Seeder
     {
         $users = [
             [
-                'username' => 'john_doe',
-                'email' => 'john@example.com',
-                'password' => Hash::make('password123'),
+                'username' => 'Karina',
+                'email' => 'karina@gmail.com',
+                'password' => Hash::make('karina'),
                 'bio' => 'Just a regular user.',
-                'profile_picture' => null,
+                'profile_picture' => 'https://www.kpopmonster.jp/wp-content/uploads/2021/07/karina_01.jpg',
             ],
             [
                 'username' => 'jane_doe',
                 'email' => 'jane@example.com',
                 'password' => Hash::make('password123'),
                 'bio' => 'Flutter enthusiast and blogger.',
-                'profile_picture' => null,
+                'profile_picture' => 'https://www.kpopmonster.jp/wp-content/uploads/2021/07/karina_01.jpg',
             ],
             [
                 'username' => 'admin_user',
                 'email' => 'admin@example.com',
                 'password' => Hash::make('adminpassword'),
                 'bio' => 'System administrator.',
-                'profile_picture' => null,
+                'profile_picture' => 'https://www.kpopmonster.jp/wp-content/uploads/2021/07/karina_01.jpg',
             ],
+
         ];
 
         foreach ($users as $user) {
