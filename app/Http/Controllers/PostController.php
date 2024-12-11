@@ -27,21 +27,21 @@ class PostController extends Controller
     // Get all posts
     public function getAllPosts()
     {
-        $posts = Post::all();
+        $posts = Post::with('user', 'comments', 'likes')->get();
         return response()->json($posts);
     }
 
     // Get posts by a specific user
     public function getUserPosts($id)
     {
-        $posts = Post::where('user_id', $id)->get();
+        $posts = Post::where('user_id', $id)->with('user', 'comments', 'likes')->get();
         return response()->json($posts);
     }
 
     // Get a specific post
     public function getPost($id)
     {
-        $post = Post::findOrFail($id);
+        $post = Post::findOrFail($id)->with('user', 'comments', 'likes')->get();
         return response()->json($post);
     }
 
