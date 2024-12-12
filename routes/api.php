@@ -26,6 +26,7 @@ Route::get('/users/{id}/following', [FollowController::class, 'getFollowing']);
 
 // Post Routes (Menggunakan token untuk membuat post, like, dan delete post)
 Route::post('/posts', [PostController::class, 'createPost'])->middleware('auth:sanctum');
+Route::put('/posts/{id}', [PostController::class, 'updatePost'])->middleware('auth:sanctum');
 Route::get('/posts', [PostController::class, 'getAllPosts']);
 Route::get('/users/{id}/posts', [PostController::class, 'getUserPosts']);
 Route::get('/posts/{id}', [PostController::class, 'getPost']);

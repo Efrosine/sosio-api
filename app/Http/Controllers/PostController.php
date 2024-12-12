@@ -74,7 +74,29 @@ class PostController extends Controller
 
         return response()->json($post);
     }
+    // Update a post
+    public function updatePost(Request $request, $id)
+    {
+        $post = Post::findOrFail($id);
 
+        // Validate the incoming data
+        $request->validate([
+            'content' => 'required|max:255',
+            'image' => 'nullable',
+        ]);
+
+        // Update the post's content and image
+        $post->update([
+            'content' => $request->content,
+            'image' => $request->image,
+        ]);
+
+        // Add comment count and like count to the response
+        $post->comment_count = $post->comments()->count();
+        $post->like_count = $post->likes()->count();
+
+        return response()->json($post);
+    }
     // Delete a post
     public function deletePost($id)
     {
